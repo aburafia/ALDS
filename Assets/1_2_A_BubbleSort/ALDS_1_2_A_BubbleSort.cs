@@ -44,13 +44,13 @@ public class ALDS_1_2_A_BubbleSort : MonoBehaviour
 
     IEnumerator bubbleSort()
     {
-
+        int head = 0;
         bool flg = true;
 		while (flg)
 		{
             flg = false;
 
-            for(int i = objs.Length - 1; i > 0; i--) {
+            for(int i = objs.Length - 1; i > head; i--) {
                 if(objs[i].transform.localScale.y < objs[i - 1].transform.localScale.y)
 				{
                     var tmp = objs[i];
@@ -69,7 +69,10 @@ public class ALDS_1_2_A_BubbleSort : MonoBehaviour
                 }
             }
 
-		}
+            //判定しない先頭位置が迫り上がっていく
+            objs[head].GetComponent<Renderer>().material.color = Color.red;
+            head++;
+        }
 
         yield return null;
     }
