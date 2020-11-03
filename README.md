@@ -5,3 +5,7 @@
 # 1_2_A_BubbleSort
 
 ![Oct-23-2020 23-10-27](https://user-images.githubusercontent.com/237617/97014226-0560dd80-1585-11eb-8ac4-9b33f17e0198.gif)
+
+# 1_2_C StableSrot
+
+![Nov-04-2020 01-23-05](https://user-images.githubusercontent.com/237617/98012505-84cf9600-1e3c-11eb-8210-e15a84bce4f0.gif)
