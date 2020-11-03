@@ -8,6 +8,6 @@
 
 # 1_2_C StableSort
 BubbleSortは同じ値なら、自分より前の値をソートしていく。（安定的 stable）<br>
-selectedSortは比較で入れ替えていくので、結果入れ替わることがある。（非安定的　no stable）<br>
+SelectedSortは比較で入れ替えていくので、結果入れ替わることがある。（非安定的　no stable）<br>
 
 ![Nov-04-2020 01-23-05](https://user-images.githubusercontent.com/237617/98012505-84cf9600-1e3c-11eb-8210-e15a84bce4f0.gif)
