@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class ALDS_1_2_C_StableSort : MonoBehaviour
 {
-    public RectTransform obj;
-    public Text countText;
+    RectTransform obj;
+    Text lableText;
 
     RectTransform[] objs;
+
+    float yCenter = 0;
 
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        obj = GameObject.Find("Panel").GetComponent<RectTransform>();
+        lableText = GameObject.Find("Text").GetComponent<Text>();
+
+        yCenter = GetComponent<RectTransform>().sizeDelta.y / 2;
+
+
         int count = 10;
 
         objs = new RectTransform[count];
@@ -32,8 +40,8 @@ public class ALDS_1_2_C_StableSort : MonoBehaviour
         {
             objs[i] = clone(obj);
 
-            objs[i].transform.localPosition = new Vector3(numToXpos(i), 0, 0);
-            objs[i].transform.localScale += new Vector3(0, Random.Range(0.1f, 5), 0);
+            objs[i].position = numToPos(i);
+            objs[i].sizeDelta += new Vector2(0, Random.Range(0f, 300f));
 
             yield return new WaitForSeconds(0.1f);
         }
@@ -57,11 +65,11 @@ public class ALDS_1_2_C_StableSort : MonoBehaviour
             objs[i] = objs[min];
             objs[min] = tmp;
 
-            objs[min].position = new Vector3(numToXpos(min), 0, 0);
-            objs[i].position = new Vector3(numToXpos(i), 0, 0);
+            objs[min].position = numToPos(min);
+            objs[i].position = numToPos(i);
 
             count++;
-            countText.text = count.ToString();
+            lableText.text = count.ToString();
 
             yield return new WaitForSeconds(0.2f);
 
@@ -71,16 +79,17 @@ public class ALDS_1_2_C_StableSort : MonoBehaviour
         yield return null;
     }
 
-    //添字からxの位置を導出
-    public float numToXpos(int i)
+    //添字から位置を導出
+    public Vector3 numToPos(int i)
     {
         //間隔
         float dXPosition = 50f;
 
         //初期位置
-        float firstXpos = -5;
+        float firstXpos = 100;
 
-        return firstXpos + dXPosition * i;
+
+        return new Vector3(firstXpos + dXPosition * i, yCenter, 0) ;
     }
 
     public RectTransform clone(RectTransform go)
