@@ -15,3 +15,6 @@ SelectedSortは比較で入れ替えていくので、結果入れ替わるこ�
 
 # 1_3_A Stack
 ![Nov-04-2020 20-49-16](https://user-images.githubusercontent.com/237617/98108582-88682900-1edf-11eb-80f8-36c7e6ce2226.gif)
+
+# 1_3_B Queue
+![Nov-16-2020 23-39-08](https://user-images.githubusercontent.com/237617/99265371-f956fb80-2864-11eb-857e-be693294ceb5.gif)
